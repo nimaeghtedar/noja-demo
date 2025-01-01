@@ -1,0 +1,59 @@
+<header
+  class="navbar navbar-expand-lg sticky-top"
+  style="
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--card-border);
+  "
+>
+  <div class="container">
+    <a class="navbar-brand" href="/pages/index.html">
+      <img src="/assets/images/logos/noja-logo.png" alt="NOJA" height="40" />
+    </a>
+
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/stores.html">فروشگاه‌ها</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/products.html">محصولات</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pages/purchase-link.html">خرید با لینک</a>
+        </li>
+      </ul>
+
+      <div class="d-flex align-items-center gap-3">
+        <button id="theme-toggle" class="btn btn-link" type="button">
+          <i
+            id="theme-icon"
+            class="bi bi-moon fs-5"
+            style="color: var(--text-primary)"
+          ></i>
+        </button>
+
+        <a href="/pages/cart.html" class="btn btn-link position-relative">
+          <i class="bi bi-cart"></i>
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            0
+          </span>
+        </a>
+
+        <a href="/pages/auth/login.html" class="btn btn-primary">
+          ورود / ثبت‌نام
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
