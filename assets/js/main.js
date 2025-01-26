@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function () {
 // Load header and footer
 function loadComponents() {
   return Promise.all([
-    fetch('/components/header.html').then((response) => response.text()),
-    fetch('/components/footer.html').then((response) => response.text()),
+    fetch('./components/header.html').then((response) => response.text()),
+    fetch('./components/footer.html').then((response) => response.text()),
   ]).then(([header, footer]) => {
     document.getElementById('header').innerHTML = header;
     document.getElementById('footer').innerHTML = footer;
