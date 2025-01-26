@@ -3,81 +3,232 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NOJA - نوژا | خرید جهانی</title>
-
-    <!-- Bootstrap RTL -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
-    <!-- Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Custom Styles -->
+    <meta name="description" content="نوژا - پلتفرم هوشمند خرید جهانی با پرداخت ریالی و ارسال مستقیم" />
+    <meta name="keywords" content="خرید جهانی, خرید از آمازون, خرید از ترندیول, پرداخت ریالی" />
+    <title>NOJA - نوژا | پلتفرم هوشمند خرید جهانی</title>
+    
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png" />
+    
+    <!-- Styles Bundle -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
     <link href="/assets/css/style.css" rel="stylesheet" />
   </head>
   <body data-theme="light">
-    <!-- Header will be loaded here -->
     <div id="header"></div>
 
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container text-center">
-        <img
-          src="/assets/images/logos/noja-logo.png"
-          alt="NOJA"
-          class="mb-4"
-          style="max-width: 300px"
-        />
-        <h1 class="display-2 mb-4">تجربه‌ای نو در خرید جهانی</h1>
-        <p class="lead mb-5">نخستین پلتفرم هوشمند خرید بین‌المللی</p>
+    <section class="hero-section position-relative overflow-hidden bg-pattern">
+      <div class="container text-center py-5">
+        <img src="/assets/images/logos/noja-logo.png" alt="NOJA" class="mb-4 logo-animated" style="max-width: 180px;" data-aos="zoom-in" />
+        
+        <h1 class="display-1 fw-bold mb-4" style="font-size: 4.5rem;" data-aos="fade-up">
+          جهان در دستان شماست
+        </h1>
+        <p class="lead mb-5 text-secondary mx-auto" style="max-width: 600px;" data-aos="fade-up" data-aos-delay="200">
+          خرید مستقیم از معتبرترین فروشگاه‌های جهان | پرداخت ریالی | ارسال سریع
+        </p>
 
-        <!-- Features -->
-        <div class="row g-4 mt-4">
-          <div class="col-md-4">
-            <div class="feature-card">
-              <i class="bi bi-wallet display-4 mb-3"></i>
-              <h3>خرید آسان</h3>
-              <p>پرداخت ریالی، تحویل درب منزل</p>
-            </div>
+        <!-- Shopping Methods -->
+        <div class="d-flex flex-wrap justify-content-center gap-4 mb-5">
+          <div class="shopping-method" data-aos="fade-left" data-aos-delay="400">
+            <a href="/pages/stores.html" class="btn btn-primary btn-lg d-flex align-items-center px-4">
+              <i class="bi bi-shop-window fs-4 me-2"></i>
+              خرید از فروشگاه‌ها
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="feature-card">
-              <i class="bi bi-shield-check display-4 mb-3"></i>
-              <h3>تضمین اصالت</h3>
-              <p>خرید مستقیم از برندهای معتبر</p>
-            </div>
+          <div class="shopping-method" data-aos="fade-right" data-aos-delay="400">
+            <a href="/pages/purchase-link.html" class="btn btn-outline-primary btn-lg d-flex align-items-center">
+              <i class="bi bi-link-45deg fs-4 me-2"></i>
+              خرید با لینک
+            </a>
           </div>
-          <div class="col-md-4">
-            <div class="feature-card">
-              <i class="bi bi-headset display-4 mb-3"></i>
-              <h3>پشتیبانی ویژه</h3>
-              <p>همراه شما در تمام مراحل خرید</p>
+        </div>
+
+        <!-- Quick Benefits -->
+        <div class="benefits-bar p-3 rounded-4 bg-light mb-5" data-aos="fade-up" data-aos-delay="600">
+          <div class="row g-4 justify-content-center">
+            <div class="col-auto">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-shield-check text-primary fs-4 me-2"></i>
+                <span>ضمانت اصالت کالا</span>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-currency-dollar text-primary fs-4 me-2"></i>
+                <span>پرداخت ریالی</span>
+              </div>
+            </div>
+            <div class="col-auto">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-truck text-primary fs-4 me-2"></i>
+                <span>ارسال سریع و مطمئن</span>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Features Grid -->
+        <div class="row g-4 features-grid">
+          <div class="col-md-4" data-aos="fade-up">
+            <div class="feature-card hover-lift">
+              <div class="icon-wrapper mb-4">
+                <i class="bi bi-wallet2 display-4 text-primary"></i>
+              </div>
+              <h3 class="h4 mb-3">پرداخت آسان</h3>
+              <p class="text-secondary mb-4">پرداخت ریالی بدون نیاز به کارت بین‌المللی</p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>بدون کارمزد اضافی</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>تضمین بهترین نرخ</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>پرداخت امن و آنی</li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-card hover-lift">
+              <div class="icon-wrapper mb-4">
+                <i class="bi bi-shield-check display-4 text-primary"></i>
+              </div>
+              <h3 class="h4 mb-3">خرید مطمئن</h3>
+              <p class="text-secondary mb-4">خرید مستقیم از فروشگاه‌های معتبر جهانی</p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>تضمین اصالت کالا</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>گارانتی بازگشت وجه</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>پشتیبانی ۲۴ ساعته</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+            <div class="feature-card hover-lift">
+              <div class="icon-wrapper mb-4">
+                <i class="bi bi-box-seam display-4 text-primary"></i>
+              </div>
+              <h3 class="h4 mb-3">ارسال سریع</h3>
+              <p class="text-secondary mb-4">تحویل درب منزل در کوتاه‌ترین زمان</p>
+              <ul class="list-unstyled text-start">
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>ارسال اکسپرس</li>
+                <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i>پیگیری لحظه‌ای</li>
+                <li><i class="bi bi-check2-circle text-success me-2"></i>بیمه حمل و نقل</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trusted Brands -->
+        <section class="trusted-brands py-5 mt-5" data-aos="fade-up">
+          <h2 class="h3 mb-5">برندهای معتبر همکار</h2>
+          <div class="swiper brands-slider">
+            <div class="swiper-wrapper align-items-center">
+              <div class="swiper-slide">
+                <img src="/assets/images/logos/amazon-logo.png" alt="Amazon" class="img-fluid">
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/images/logos/trendyol-logo.png" alt="Trendyol" class="img-fluid">
+              </div>
+              <div class="swiper-slide">
+                <img src="/assets/images/logos/namshi-logo.png" alt="Namshi" class="img-fluid">
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="statistics py-5" data-aos="fade-up">
+          <div class="row g-4 text-center">
+            <div class="col-6 col-md-3">
+              <div class="stat-card hover-lift">
+                <div class="counter h1 mb-2" data-target="100000">۰</div>
+                <p class="text-secondary mb-0">کاربر فعال</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card hover-lift">
+                <div class="counter h1 mb-2" data-target="50000">۰</div>
+                <p class="text-secondary mb-0">سفارش موفق</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card hover-lift">
+                <div class="counter h1 mb-2" data-target="3">۰</div>
+                <p class="text-secondary mb-0">فروشگاه معتبر</p>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card hover-lift">
+                <div class="counter h1 mb-2" data-target="98">۰</div>
+                <p class="text-secondary mb-0">رضایت مشتری</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
-    <!-- Footer will be loaded here -->
+
     <div id="footer"></div>
-    <!-- Scripts -->
+
+    <!-- Scripts Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="/assets/js/theme.js"></script>
     <script src="/assets/js/main.js"></script>
     <script>
-      // Load header
-      $(document).ready(function () {
+      $(document).ready(function() {
+        // Load Components
         $('#header').load('/components/header.html');
         $('#footer').load('/components/footer.html');
+        
+        // Initialize AOS
+        AOS.init({
+          duration: 800,
+          once: true
+        });
+        
+        // Initialize Swiper
+        new Swiper('.brands-slider', {
+          slidesPerView: 1,
+          spaceBetween: 30,
+          autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          breakpoints: {
+            640: {
+              slidesPerView: 2,
+            },
+            768: {
+              slidesPerView: 3,
+            }
+          }
+        });
+        
+        // Counter Animation
+        $('.counter').each(function() {
+          const $this = $(this);
+          const target = parseInt($this.data('target'));
+          
+          $({ Counter: 0 }).animate({
+            Counter: target
+          }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function() {
+              $this.text(Math.ceil(this.Counter).toLocaleString('fa-IR'));
+            }
+          });
+        });
       });
     </script>
   </body>
