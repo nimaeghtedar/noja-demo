@@ -86,8 +86,8 @@ h6 {
 
 .feature-card {
   background: var(--card-bg);
-  border-radius: 20px;
-  padding: 2.5rem;
+  border-radius: 24px;
+  padding: 3rem 2rem;
   text-align: center;
   box-shadow: var(--shadow-soft);
   transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -101,18 +101,28 @@ h6 {
 }
 
 .icon-wrapper {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  background: var(--bg-primary);
+  background: var(--gradient-primary);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 2rem;
   transition: transform 0.3s ease;
 }
 
 .feature-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.feature-card .icon-wrapper i {
+  font-size: 3rem;
+  color: var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper i {
   transform: scale(1.1);
 }
 
@@ -316,4 +326,158 @@ footer .bi:hover {
   background-color: var(--accent-primary);
   border-color: var (--accent-primary);
   color: var(--bg-primary);
+}
+
+/* Enhanced Feature Showcase */
+.features-showcase {
+  margin-top: 3rem;
+}
+
+.feature-showcase-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 2rem 1.5rem;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.feature-showcase-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.feature-showcase-card .icon-wrapper {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-showcase-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(-5deg);
+  background: var(--gradient-primary);
+}
+
+.feature-showcase-card .icon-wrapper i {
+  font-size: 2rem;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Benefits Bar */
+.benefits-bar {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow-soft);
+}
+
+.benefits-bar .bi {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Enhanced Brand Slider */
+.trusted-brands {
+  padding: 4rem 0;
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  margin: 3rem 0;
+}
+
+.brands-slider {
+  padding: 2rem 0;
+}
+
+.brands-slider .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.brands-slider .swiper-slide img {
+  max-height: 50px;
+  opacity: 0.6;
+  transition: all 0.4s ease;
+  filter: grayscale(100%);
+}
+
+.brands-slider .swiper-slide:hover img {
+  opacity: 1;
+  transform: scale(1.1);
+  filter: grayscale(0%);
+}
+
+/* Enhanced Buttons */
+.btn {
+  border-radius: 12px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border: none;
+  box-shadow: 0 4px 15px rgba(43, 52, 65, 0.15);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(43, 52, 65, 0.2);
+}
+
+.btn-outline-primary {
+  border: 2px solid var(--accent-primary);
+  color: var(--accent-primary);
+  background: transparent;
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  border-color: transparent;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(43, 52, 65, 0.2);
+}
+
+/* Enhanced Typography */
+.display-1 {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
+}
+
+.lead {
+  font-weight: 400;
+  line-height: 1.8;
+}
+
+/* Logo Animation */
+.logo-animated {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* Enhanced Background Pattern */
+.bg-pattern {
+  background-image: radial-gradient(var(--card-border) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
