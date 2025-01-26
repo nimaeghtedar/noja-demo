@@ -1,34 +1,29 @@
 /* Core Variables */
 :root {
-  /* Light Theme */
-  --bg-primary: #e5ddd0;
-  --bg-secondary: #f2ede4;
+  --bg-primary: #f8f5f0;
+  --bg-secondary: #ffffff;
   --text-primary: #2b3441;
-  --text-secondary: #1c232d;
+  --text-secondary: #566474;
   --accent-primary: #2b3441;
-  --accent-secondary: #1c232d;
-  --card-bg: rgba(242, 237, 228, 0.9);
-  --card-border: rgba(43, 52, 65, 0.1);
-  --error-color: #ff4e83;
-  --success-color: #2b3441;
-  --gradient-primary: linear-gradient(135deg, #e5ddd0 0%, #f2ede4 100%);
-  --shadow-soft: 8px 8px 24px rgba(185, 177, 165, 0.3),
-    -8px -8px 24px rgba(255, 255, 255, 0.8);
-  --shadow-pressed: inset 6px 6px 12px rgba(185, 177, 165, 0.3),
-    inset -6px -6px 12px rgba(255, 255, 255, 0.8);
+  --accent-secondary: #566474;
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border: rgba(43, 52, 65, 0.08);
+  --gradient-primary: linear-gradient(135deg, #f8f5f0 0%, #ffffff 100%);
+  --shadow-soft: 0 10px 30px rgba(43, 52, 65, 0.1);
+  --shadow-hover: 0 15px 40px rgba(43, 52, 65, 0.15);
 }
 
 /* Dark Theme */
 [data-theme='dark'] {
-  --bg-primary: #2b3441;
-  --bg-secondary: #1c232d;
-  --text-primary: #e5ddd0;
-  --text-secondary: #c4c4c4;
-  --accent-primary: #e5ddd0;
-  --accent-secondary: #c4c4c4;
-  --card-bg: rgba(28, 35, 45, 0.9);
-  --card-border: rgba(229, 221, 208, 0.2);
-  --gradient-primary: linear-gradient(135deg, #2b3441 0%, #1c232d 100%);
+  --bg-primary: #1a1f25;
+  --bg-secondary: #2b3441;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent-primary: #f8f5f0;
+  --accent-secondary: #e2e8f0;
+  --card-bg: rgba(43, 52, 65, 0.95);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --gradient-primary: linear-gradient(135deg, #1a1f25 0%, #2b3441 100%);
   --shadow-soft: 8px 8px 24px rgba(0, 0, 0, 0.2),
     -8px -8px 24px rgba(255, 255, 255, 0.05);
 }
@@ -62,14 +57,19 @@ h6 {
 
 /* Bootstrap Overrides */
 .btn-primary {
-  background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  background: var(--accent-primary);
+  border: none;
+  box-shadow: 0 4px 15px rgba(43, 52, 65, 0.15);
   color: var(--bg-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
-  background-color: var(--accent-secondary);
-  border-color: var(--accent-secondary);
+  background: var(--accent-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(43, 52, 65, 0.2);
 }
 
 .card {
@@ -85,16 +85,73 @@ h6 {
 }
 
 .feature-card {
-  background: var(--bg-secondary);
-  border-radius: 15px;
-  padding: 2rem;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 2.5rem;
   text-align: center;
   box-shadow: var(--shadow-soft);
-  transition: transform 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
 }
 
 .feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .icon-wrapper {
+  transform: scale(1.1);
+}
+
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.hover-lift:hover {
   transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(10px);
+}
+
+.counter {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.brands-slider .swiper-slide img {
+  opacity: 0.7;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  max-height: 60px;
+}
+
+.brands-slider .swiper-slide:hover img {
+  opacity: 1;
+  transform: scale(1.05);
 }
 
 /* Footer Styles */
@@ -202,7 +259,7 @@ footer .bi:hover {
 
 .category-card .card-title {
   font-family: var(--font-display);
-  color: var(--text-primary);
+  color: var (--text-primary);
 }
 
 .category-card .card-text {
@@ -257,6 +314,6 @@ footer .bi:hover {
 
 .pagination .page-item.active .page-link {
   background-color: var(--accent-primary);
-  border-color: var(--accent-primary);
+  border-color: var (--accent-primary);
   color: var(--bg-primary);
 }
