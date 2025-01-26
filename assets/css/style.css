@@ -481,3 +481,131 @@ footer .bi:hover {
   background-image: radial-gradient(var(--card-border) 1px, transparent 1px);
   background-size: 20px 20px;
 }
+<<<<<<< HEAD
+=======
+
+/* Enhanced Header Styles */
+.backdrop-blur {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.logo-transition {
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .logo-transition {
+  transform: scale(1.05);
+}
+
+.nav-link-hover {
+  position: relative;
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+}
+
+.nav-link-hover:hover {
+  color: var(--accent-primary);
+}
+
+.nav-link-hover:hover::after {
+  width: 100%;
+}
+
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  background: var(--bg-secondary);
+  color: var(--accent-primary);
+  transform: translateY(-2px);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.cart-btn:hover .cart-badge {
+  transform: scale(1.1);
+}
+
+.custom-toggler {
+  border: none;
+  padding: 0.25rem;
+}
+
+.custom-toggler:focus {
+  box-shadow: none;
+}
+
+.toggler-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.toggler-icon::before,
+.toggler-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.toggler-icon::before {
+  top: -6px;
+}
+
+.toggler-icon::after {
+  bottom: -6px;
+}
+
+[data-theme='dark'] .custom-toggler .toggler-icon,
+[data-theme='dark'] .custom-toggler .toggler-icon::before,
+[data-theme='dark'] .custom-toggler .toggler-icon::after {
+  background: var(--text-primary);
+}
+>>>>>>> 2c94919 (feat: enhanced landing page with improved animations and countdown)
