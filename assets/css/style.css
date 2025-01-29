@@ -464,7 +464,7 @@ footer .bi:hover {
 .btn-outline-primary:hover {
   background: linear-gradient(
     135deg,
-    var(--accent-primary),
+    var (--accent-primary),
     var(--accent-secondary)
   );
   border-color: transparent;
@@ -760,4 +760,42 @@ footer .bi:hover {
   .store-footer {
     padding: 1rem !important;
   }
+}
+
+/* Purchase Link Page Styles */
+.steps-guide .step-icon {
+  min-width: 32px;
+}
+
+.step-content h5 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+}
+
+#purchaseForm .form-control,
+#purchaseForm .form-select {
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+}
+
+#purchaseForm .input-group .form-control {
+  border-start-end-radius: 0;
+  border-end-end-radius: 0;
+}
+
+#purchaseForm .input-group .btn {
+  border-start-start-radius: 0;
+  border-end-start-radius: 0;
+}
+
+#purchaseForm textarea.form-control {
+  resize: vertical;
+}
+
+#purchaseForm .btn-outline-primary:hover {
+  color: var(--bg-primary);
 }
