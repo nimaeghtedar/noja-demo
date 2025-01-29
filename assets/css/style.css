@@ -127,8 +127,8 @@ h6 {
 }
 
 .hover-lift {
-  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
-              box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+    box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .hover-lift:hover {
@@ -146,7 +146,11 @@ h6 {
 }
 
 .counter {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 3rem;
@@ -369,7 +373,11 @@ footer .bi:hover {
 
 .feature-showcase-card .icon-wrapper i {
   font-size: 2rem;
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -383,7 +391,11 @@ footer .bi:hover {
 }
 
 .benefits-bar .bi {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -429,7 +441,11 @@ footer .bi:hover {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   border: none;
   box-shadow: 0 4px 15px rgba(43, 52, 65, 0.15);
 }
@@ -446,7 +462,11 @@ footer .bi:hover {
 }
 
 .btn-outline-primary:hover {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   border-color: transparent;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(43, 52, 65, 0.2);
@@ -454,7 +474,11 @@ footer .bi:hover {
 
 /* Enhanced Typography */
 .display-1 {
-  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  background: linear-gradient(
+    135deg,
+    var(--accent-primary),
+    var(--accent-secondary)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 1.2;
@@ -471,9 +495,15 @@ footer .bi:hover {
 }
 
 @keyframes floating {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Enhanced Background Pattern */
@@ -481,8 +511,6 @@ footer .bi:hover {
   background-image: radial-gradient(var(--card-border) 1px, transparent 1px);
   background-size: 20px 20px;
 }
-<<<<<<< HEAD
-=======
 
 /* Enhanced Header Styles */
 .backdrop-blur {
@@ -608,4 +636,128 @@ footer .bi:hover {
 [data-theme='dark'] .custom-toggler .toggler-icon::after {
   background: var(--text-primary);
 }
->>>>>>> 2c94919 (feat: enhanced landing page with improved animations and countdown)
+
+/* Hero Section Styles */
+.hero-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  position: relative;
+}
+
+.accent-bar {
+  width: 80px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+}
+
+.shape-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+}
+
+/* Store Cards Styles */
+.stores-section {
+  background-color: #f8f9fa;
+}
+
+.store-card-modern {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.store-card-modern:hover {
+  transform: translateY(-5px);
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.store-logo {
+  height: 40px;
+  object-fit: contain;
+}
+
+.store-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.store-body {
+  flex-grow: 1;
+}
+
+.store-title {
+  color: #2d3748;
+  margin: 0;
+}
+
+.store-description {
+  font-size: 0.95rem;
+  color: #718096;
+}
+
+/* Category Tags */
+.categories-wrapper {
+  margin-top: 1rem;
+}
+
+.category-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.category-tag {
+  background: #f1f5f9;
+  color: #64748b;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+/* Store Footer */
+.store-footer {
+  border-top: 1px solid #eee;
+}
+
+.btn-gradient {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  transition: opacity 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .store-card-modern {
+    margin-bottom: 1rem;
+  }
+
+  .store-header {
+    padding: 1rem !important;
+  }
+
+  .store-body,
+  .store-footer {
+    padding: 1rem !important;
+  }
+}

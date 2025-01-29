@@ -1,181 +1,25 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa"
+      dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="/">
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
     <title>ورود به حساب کاربری | NOJA - نوژا</title>
 
-    <!-- Bootstrap RTL & Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --primary-color: #2b3441;
-            --accent-color: #566474;
-            --bg-gradient: linear-gradient(135deg, #f8f5f0 0%, #ffffff 100%);
-        }
-
-        .auth-container {
-            min-height: 100vh;
-            background: var(--bg-gradient);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .floating-shapes::before {
-            content: '';
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, rgba(43, 52, 65, 0.05), rgba(86, 100, 116, 0.05));
-            top: -250px;
-            right: -250px;
-            animation: float 15s infinite ease-in-out;
-        }
-
-        .floating-shapes::after {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, rgba(86, 100, 116, 0.05), rgba(43, 52, 65, 0.05));
-            bottom: -150px;
-            left: -150px;
-            animation: float 20s infinite ease-in-out reverse;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            50% { transform: translate(30px, 30px) rotate(5deg); }
-        }
-
-        .auth-card {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-radius: 16px; /* match updated style.css */
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .auth-sidebar {
-            background: var(--primary-color);
-            padding: 3rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .auth-sidebar::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="white" opacity="0.1" width="100" height="100"/></svg>') repeat;
-            animation: slide 20s linear infinite;
-        }
-
-        @keyframes slide {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
-        }
-
-        .btn-google {
-            background: white;
-            color: #333;
-            border: 1px solid #ddd;
-            transition: all 0.3s ease;
-        }
-
-        .btn-google:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .social-divider {
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: #666;
-        }
-
-        .social-divider::before,
-        .social-divider::after {
-            content: '';
-            flex: 1;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .social-divider span {
-            padding: 0 10px;
-        }
-
-        .form-control {
-            padding: 0.8rem 1rem;
-            border-radius: 12px;
-            border: 2px solid #eee;
-            transition: all 0.3s ease;
-        }
-
-        .form-control:focus {
-            border-color: var(--primary-color);
-            box-shadow: 0 0 0 3px rgba(43, 52, 65, 0.1);
-        }
-
-        .btn-primary {
-            background: var(--primary-color);
-            border: none;
-            padding: 0.8rem 1.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-color);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .otp-input {
-            width: 50px;
-            height: 50px;
-            font-size: 1.5rem;
-            text-align: center;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            margin: 0 4px;
-            transition: all 0.3s ease;
-        }
-
-        .otp-input:focus {
-            border-color: var (--primary-color);
-            box-shadow: 0 0 0 3px rgba(43, 52, 65, 0.1);
-        }
-
-        .floating {
-            animation: floating 3s infinite ease-in-out;
-        }
-
-        @keyframes floating {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Lalezar', cursive; /* ensure Lalezar for headings */
-        }
-        body {
-            font-family: 'Vazirmatn', sans-serif; /* Vazirmatn for body */
-        }
-    </style>
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+          rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap"
+          rel="stylesheet">
+    <link href="/assets/styles/auth.css"
+          rel="stylesheet">
 </head>
+
 <body>
     <div class="auth-container floating-shapes">
         <div class="container py-5">
@@ -186,10 +30,16 @@
                             <!-- Sidebar -->
                             <div class="col-lg-5 d-none d-lg-block auth-sidebar">
                                 <div class="text-center position-relative">
-                                    <img src="/assets/images/logos/noja-logo.png" alt="NOJA" class="mb-4 floating" style="max-width: 150px;">
+                                    <img src="/assets/images/logos/noja-logo.png"
+                                         alt="NOJA"
+                                         class="mb-4 floating"
+                                         style="max-width: 150px;">
                                     <h1 class="display-6 mb-4">به نوژا خوش آمدید</h1>
                                     <p class="lead mb-4">پلتفرم هوشمند خرید جهانی با پرداخت ریالی و ارسال مستقیم</p>
-                                    <img src="/assets/images/login-illustration.svg" alt="" class="img-fluid mt-4 floating" style="max-width: 300px;">
+                                    <img src="/assets/images/login-illustration.svg"
+                                         alt=""
+                                         class="img-fluid mt-4 floating"
+                                         style="max-width: 300px;">
                                 </div>
                             </div>
 
@@ -199,7 +49,7 @@
                                     <!-- Initial Login Form -->
                                     <div id="loginForm">
                                         <h2 class="text-center mb-4">ورود به حساب کاربری</h2>
-                                        
+
                                         <button class="btn btn-google w-100 mb-4">
                                             <i class="bi bi-google me-2"></i>
                                             ورود با گوگل
@@ -209,64 +59,180 @@
                                             <span>یا</span>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label">شماره موبایل</label>
-                                            <div class="input-group">
-                                                <span class="input-group-text">+98</span>
-                                                <input type="tel" class="form-control" id="phone" placeholder="9xxxxxxxxx">
+                                        <!-- Add login tabs -->
+                                        <ul class="nav nav-pills nav-fill mb-4"
+                                            id="loginTabs"
+                                            role="tablist">
+                                            <li class="nav-item"
+                                                role="presentation">
+                                                <button class="nav-link active"
+                                                        data-bs-toggle="pill"
+                                                        data-bs-target="#phoneTab">
+                                                    <i class="bi bi-phone me-2"></i>شماره موبایل
+                                                </button>
+                                            </li>
+                                            <li class="nav-item"
+                                                role="presentation">
+                                                <button class="nav-link"
+                                                        data-bs-toggle="pill"
+                                                        data-bs-target="#emailTab">
+                                                    <i class="bi bi-envelope me-2"></i>ایمیل
+                                                </button>
+                                            </li>
+                                        </ul>
+
+                                        <div class="tab-content">
+                                            <!-- Phone Tab -->
+                                            <div class="tab-pane fade show active"
+                                                 id="phoneTab">
+                                                <div class="mb-3">
+                                                    <label class="form-label">شماره موبایل</label>
+                                                    <div class="input-group">
+                                                        <span class="input-group-text">+98</span>
+                                                        <input type="tel"
+                                                               class="form-control"
+                                                               id="phone"
+                                                               placeholder="9xxxxxxxxx">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Email Tab -->
+                                            <div class="tab-pane fade"
+                                                 id="emailTab">
+                                                <div class="mb-3">
+                                                    <label class="form-label">ایمیل</label>
+                                                    <input type="email"
+                                                           class="form-control"
+                                                           id="email"
+                                                           placeholder="example@domain.com">
+                                                </div>
+
+                                                <div class="mb-3">
+                                                    <label class="form-label">رمز عبور</label>
+                                                    <div class="input-group">
+                                                        <input type="password"
+                                                               class="form-control"
+                                                               id="emailPassword">
+                                                        <button class="btn btn-outline-secondary"
+                                                                type="button"
+                                                                onclick="togglePassword(this)">
+                                                            <i class="bi bi-eye"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
 
-                                        <div class="mb-3">
-                                            <label class="form-label">رمز عبور</label>
-                                            <div class="input-group">
-                                                <input type="password" class="form-control" id="password">
-                                                <button class="btn btn-outline-secondary" type="button" onclick="togglePassword(this)">
-                                                    <i class="bi bi-eye"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <small class="text-muted d-block mb-3">
+                                            برای تست:<br>
+                                            موبایل: 09121234567 | رمز: userpass<br>
+                                            ایمیل: user@example.com | رمز: userpass
+                                        </small>
+
+                                        <div id="loginStatus"
+                                             class="alert d-none mb-3"></div>
 
                                         <div class="d-flex justify-content-between mb-4">
                                             <div class="form-check">
-                                                <input type="checkbox" class="form-check-input" id="remember">
-                                                <label class="form-check-label" for="remember">مرا به خاطر بسپار</label>
+                                                <input type="checkbox"
+                                                       class="form-check-input"
+                                                       id="remember">
+                                                <label class="form-check-label"
+                                                       for="remember">مرا به خاطر بسپار</label>
                                             </div>
-                                            <a href="#" class="text-primary">فراموشی رمز عبور؟</a>
+                                            <a href="#"
+                                               class="text-primary">فراموشی رمز عبور؟</a>
                                         </div>
 
-                                        <button class="btn btn-primary w-100 mb-4" onclick="showOtpForm()">ورود به حساب</button>
+                                        <button class="btn btn-primary w-100 mb-4"
+                                                onclick="handleLogin()">ورود به حساب</button>
 
                                         <p class="text-center mb-0">
                                             حساب کاربری ندارید؟
-                                            <a href="/register" class="text-primary">ثبت‌نام کنید</a>
+                                            <a href="/pages/auth/register.html"
+                                               class="text-primary">ثبت‌نام کنید</a>
                                         </p>
                                     </div>
 
                                     <!-- OTP Verification Form -->
-                                    <div id="otpForm" class="d-none">
+                                    <div id="otpForm"
+                                         class="d-none">
                                         <h2 class="text-center mb-4">تایید شماره موبایل</h2>
                                         <p class="text-center mb-4">
-                                            کد تایید به شماره <span class="text-primary" id="userPhone"></span> ارسال شد
+                                            کد تایید به شماره <span class="text-primary"
+                                                  id="userPhone"></span> ارسال شد
                                         </p>
 
                                         <div class="d-flex justify-content-center gap-2 mb-4">
-                                            <input type="text" class="otp-input" maxlength="1" data-next="otp2">
-                                            <input type="text" class="otp-input" maxlength="1" data-next="otp3" data-prev="otp1">
-                                            <input type="text" class="otp-input" maxlength="1" data-next="otp4" data-prev="otp2">
-                                            <input type="text" class="otp-input" maxlength="1" data-prev="otp3">
+                                            <input type="text"
+                                                   class="otp-input form-control text-center"
+                                                   maxlength="1"
+                                                   pattern="[0-9]*"
+                                                   inputmode="numeric"
+                                                   autocomplete="one-time-code"
+                                                   id="otp1"
+                                                   data-next="otp2">
+                                            <input type="text"
+                                                   class="otp-input form-control text-center"
+                                                   maxlength="1"
+                                                   pattern="[0-9]*"
+                                                   inputmode="numeric"
+                                                   id="otp2"
+                                                   data-next="otp3"
+                                                   data-prev="otp1">
+                                            <input type="text"
+                                                   class="otp-input form-control text-center"
+                                                   maxlength="1"
+                                                   pattern="[0-9]*"
+                                                   inputmode="numeric"
+                                                   id="otp3"
+                                                   data-next="otp4"
+                                                   data-prev="otp2">
+                                            <input type="text"
+                                                   class="otp-input form-control text-center"
+                                                   maxlength="1"
+                                                   pattern="[0-9]*"
+                                                   inputmode="numeric"
+                                                   id="otp4"
+                                                   data-prev="otp3">
                                         </div>
 
                                         <div class="text-center mb-4">
-                                            <span id="timer" class="text-secondary">02:00</span>
-                                            <button id="resendBtn" class="btn btn-link d-none">ارسال مجدد کد</button>
+                                            <span id="timer"
+                                                  class="text-secondary">02:00</span>
+                                            <button id="resendBtn"
+                                                    class="btn btn-link d-none">ارسال مجدد کد</button>
                                         </div>
 
-                                        <button class="btn btn-primary w-100" onclick="verifyOtp()">تایید و ورود</button>
+                                        <button class="btn btn-primary w-100"
+                                                onclick="verifyOtp()">تایید و ورود</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Update Welcome Modal -->
+    <div class="modal fade"
+         id="welcomeModal"
+         tabindex="-1"
+         aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body text-center p-5">
+                    <i class="bi bi-check-circle-fill text-success display-1 mb-4"></i>
+                    <h3 class="mb-3"
+                        id="welcomeTitle">خوش آمدید!</h3>
+                    <p class="mb-4"
+                       id="welcomeMessage"></p>
+                    <div class="spinner-border text-primary"
+                         role="status">
+                        <span class="visually-hidden">Loading...</span>
                     </div>
                 </div>
             </div>
@@ -283,43 +249,217 @@
             icon.classList.toggle('bi-eye-slash');
         }
 
-        // Show OTP form
-        function showOtpForm() {
-            document.getElementById('loginForm').classList.add('d-none');
-            document.getElementById('otpForm').classList.remove('d-none');
-            document.getElementById('userPhone').textContent = document.getElementById('phone').value;
-            startTimer();
+        // Login validation
+        function handleLogin() {
+            const activeTab = document.querySelector('#loginTabs .nav-link.active');
+            const statusDiv = document.getElementById('loginStatus');
+
+            if (activeTab.dataset.bsTarget === '#phoneTab') {
+                const phone = document.getElementById('phone').value;
+
+                // Validate phone number format
+                if (!/^09\d{9}$/.test(phone)) {
+                    statusDiv.className = 'alert alert-danger mb-3';
+                    statusDiv.textContent = 'شماره موبایل نامعتبر است';
+                    statusDiv.classList.remove('d-none');
+                    return;
+                }
+
+                // For demo: Simulate OTP send
+                if (phone === '09121234567') {
+                    document.getElementById('loginForm').classList.add('d-none');
+                    document.getElementById('otpForm').classList.remove('d-none');
+                    document.getElementById('userPhone').textContent = phone;
+                    startTimer();
+
+                    // Clear any previous OTP inputs
+                    document.querySelectorAll('.otp-input').forEach(input => {
+                        input.value = '';
+                    });
+
+                    // Focus on first OTP input
+                    document.querySelector('.otp-input').focus();
+                } else {
+                    statusDiv.className = 'alert alert-danger mb-3';
+                    statusDiv.textContent = 'این شماره موبایل در سیستم ثبت نشده است';
+                    statusDiv.classList.remove('d-none');
+                }
+            } else {
+                // Handle email login
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('emailPassword').value;
+
+                if (email === 'user@example.com' && password === 'userpass') {
+                    // Hide login form
+                    document.getElementById('loginForm').classList.add('d-none');
+
+                    // Update modal content for email login
+                    document.getElementById('welcomeMessage').textContent =
+                        `${email} عزیز، به نوژا خوش آمدید. در حال انتقال به پنل کاربری...`;
+
+                    // Show welcome modal
+                    const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+                    welcomeModal.show();
+
+                    // Redirect after 3 seconds
+                    setTimeout(() => {
+                        window.location.href = '/dashboard';
+                    }, 3000);
+                } else {
+                    statusDiv.className = 'alert alert-danger mb-3';
+                    statusDiv.textContent = 'ایمیل یا رمز عبور اشتباه است';
+                    statusDiv.classList.remove('d-none');
+                    document.getElementById('emailPassword').value = '';
+                }
+            }
         }
 
-        // Handle OTP inputs
+        // Show OTP form
+        function showOtpForm() {
+            const username = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            if (username === '09121234567' && password === 'userpass') {
+                document.getElementById('loginForm').classList.add('d-none');
+                document.getElementById('otpForm').classList.remove('d-none');
+                document.getElementById('userPhone').textContent = username;
+                startTimer();
+            } else {
+                const statusDiv = document.getElementById('loginStatus');
+                statusDiv.className = 'alert alert-danger mb-3';
+                statusDiv.textContent = 'نام کاربری یا رمز عبور اشتباه است';
+                statusDiv.classList.remove('d-none');
+            }
+        }
+
+        // Enhanced OTP input handling
         document.querySelectorAll('.otp-input').forEach(input => {
-            input.addEventListener('input', function() {
+            // Handle input
+            input.addEventListener('input', function (e) {
+                // Allow only numbers
+                this.value = this.value.replace(/[^0-9]/g, '');
+
                 if (this.value) {
+                    // Move to next input if available
                     const next = this.dataset.next;
-                    if (next) document.querySelector(`[data-prev="${next}"]`).focus();
+                    if (next) {
+                        document.getElementById(next).focus();
+                    }
+
+                    // Check if all inputs are filled
+                    if (isOtpComplete()) {
+                        document.querySelector('button[onclick="verifyOtp()"]').focus();
+                    }
                 }
             });
 
-            input.addEventListener('keydown', function(e) {
-                if (e.key === 'Backspace' && !this.value) {
-                    const prev = this.dataset.prev;
-                    if (prev) document.querySelector(`[data-next="${prev}"]`).focus();
+            // Handle keyboard navigation
+            input.addEventListener('keydown', function (e) {
+                switch (e.key) {
+                    case 'Backspace':
+                        if (!this.value) {
+                            const prev = this.dataset.prev;
+                            if (prev) {
+                                const prevInput = document.getElementById(prev);
+                                prevInput.value = '';
+                                prevInput.focus();
+                            }
+                        } else {
+                            this.value = '';
+                        }
+                        break;
+
+                    case 'ArrowLeft':
+                        const prev = this.dataset.prev;
+                        if (prev) {
+                            document.getElementById(prev).focus();
+                        }
+                        break;
+
+                    case 'ArrowRight':
+                        const next = this.dataset.next;
+                        if (next) {
+                            document.getElementById(next).focus();
+                        }
+                        break;
+
+                    // Prevent non-numeric input
+                    default:
+                        if (!/^\d$/.test(e.key) && !['Tab', 'ArrowLeft', 'ArrowRight', 'Backspace'].includes(e.key)) {
+                            e.preventDefault();
+                        }
+                }
+            });
+
+            // Handle paste event
+            input.addEventListener('paste', function (e) {
+                e.preventDefault();
+                const pastedData = (e.clipboardData || window.clipboardData)
+                    .getData('text')
+                    .replace(/[^0-9]/g, '')
+                    .slice(0, 4);
+
+                if (pastedData) {
+                    const inputs = document.querySelectorAll('.otp-input');
+                    pastedData.split('').forEach((digit, index) => {
+                        if (inputs[index]) {
+                            inputs[index].value = digit;
+                        }
+                    });
+
+                    // Focus last input or first empty input
+                    const emptyInput = Array.from(inputs).find(input => !input.value);
+                    (emptyInput || inputs[inputs.length - 1]).focus();
                 }
             });
         });
+
+        // Helper function to check if OTP is complete
+        function isOtpComplete() {
+            const inputs = document.querySelectorAll('.otp-input');
+            return Array.from(inputs).every(input => input.value.length === 1);
+        }
+
+        // Verify OTP
+        function verifyOtp() {
+            if (!isOtpComplete()) {
+                alert('لطفاً کد 4 رقمی را کامل وارد کنید');
+                return;
+            }
+
+            const otp = Array.from(document.querySelectorAll('.otp-input'))
+                .map(input => input.value)
+                .join('');
+
+            // Hide OTP form
+            document.getElementById('otpForm').classList.add('d-none');
+
+            // Update modal content for phone login
+            document.getElementById('welcomeMessage').textContent =
+                `کاربر ${document.getElementById('userPhone').textContent} عزیز، به نوژا خوش آمدید. در حال انتقال به پنل کاربری...`;
+
+            // Show welcome modal
+            const welcomeModal = new bootstrap.Modal(document.getElementById('welcomeModal'));
+            welcomeModal.show();
+
+            // Redirect after 3 seconds
+            setTimeout(() => {
+                window.location.href = '/dashboard';
+            }, 3000);
+        }
 
         // Timer functionality
         function startTimer() {
             let timeLeft = 120;
             const timerEl = document.getElementById('timer');
             const resendBtn = document.getElementById('resendBtn');
-            
+
             const timer = setInterval(() => {
                 const minutes = Math.floor(timeLeft / 60);
                 const seconds = timeLeft % 60;
-                
+
                 timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
-                
+
                 if (--timeLeft < 0) {
                     clearInterval(timer);
                     timerEl.classList.add('d-none');
@@ -328,13 +468,30 @@
             }, 1000);
         }
 
-        // Verify OTP
-        function verifyOtp() {
-            // Add your OTP verification logic here
-            alert('OTP verified successfully!');
-            // Redirect to dashboard
-            window.location.href = '/dashboard';
-        }
+        // Add keyboard event listeners for login form
+        ['phone', 'phonePassword', 'email', 'emailPassword'].forEach(id => {
+            document.getElementById(id).addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    if (this.id.includes('Password')) {
+                        handleLogin();
+                    } else {
+                        document.getElementById(this.id + 'Password').focus();
+                    }
+                }
+            });
+        });
+
+        // Add event listener for phone input
+        document.getElementById('phone').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                handleLogin();
+            }
+        });
+
     </script>
+
+    <!-- Add Bootstrap JS for tabs -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

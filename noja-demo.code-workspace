@@ -1,0 +1,67 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2,
+    "editor.wordWrap": "on",
+    "files.autoSave": "onFocusChange",
+    "prettier.singleQuote": true,
+    "prettier.semi": true,
+    "html.format.wrapAttributes": "force-aligned",
+    "css.validate": true,
+    "editor.linkedEditing": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.port": 5501,
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.git": true,
+      "**/.DS_Store": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/dist": true
+    },
+    "[html]": {
+      "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+  },
+  "extensions": {
+    "recommendations": [
+      "ritwickdey.liveserver",
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint",
+      "ecmel.vscode-html-css",
+      "pranaygp.vscode-css-peek",
+      "formulahendry.auto-rename-tag",
+      "formulahendry.auto-close-tag",
+      "streetsidesoftware.code-spell-checker",
+      "eamodio.gitlens",
+      "github.vscode-pull-request-github",
+      "ms-vsliveshare.vsliveshare"
+    ]
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "chrome",
+        "request": "launch",
+        "name": "Launch Chrome against localhost",
+        "url": "http://localhost:5500",
+        "webRoot": "${workspaceFolder}"
+      }
+    ]
+  }
+}

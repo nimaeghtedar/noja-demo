@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa"
+      dir="rtl">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>نوژا | پرداخت</title>
+
+  <!-- Styles Bundle -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+  <link href="assets/css/style.css"
+        rel="stylesheet" />
+  <link href="assets/css/user.css"
+        rel="stylesheet" />
+
+</head>
+
+<body data-theme="light">
+  <div id="header"></div>
+
+  <main class="flex-grow-1">
+    <div class="container mt-5 pt-5">
+      <!-- Checkout Steps -->
+      <div class="cart-card">
+        <div class="checkout-steps">
+          <div class="step completed">
+            <i class="bi bi-cart-check"></i>
+          </div>
+          <div class="step completed">
+            <i class="bi bi-geo-alt"></i>
+          </div>
+          <div class="step active">3</div>
+        </div>
+      </div>
+
+      <!-- Order Summary -->
+      <div class="cart-card">
+        <h5 class="mb-4">اطلاعات سفارش</h5>
+
+        <div class="info-box">
+          <div class="row mb-3">
+            <div class="col-6">
+              <small class="text-secondary d-block">شماره سفارش</small>
+              <span>NOJ-12345</span>
+            </div>
+            <div class="col-6 text-start">
+              <small class="text-secondary d-block">تاریخ</small>
+              <span>۱۵ دی ۱۴۰۲</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <small class="text-secondary d-block">تعداد اقلام</small>
+              <span>۲ محصول</span>
+            </div>
+            <div class="col-6 text-start">
+              <small class="text-secondary d-block">مبلغ کل</small>
+              <span>۵,۲۹۲,۲۰۰ تومان</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <small class="text-secondary d-block mb-2">آدرس تحویل</small>
+          <p class="mb-1">تهران، خیابان ولیعصر، کوچه مهر، پلاک ۱۲</p>
+          <small class="text-secondary">کد پستی: ۱۲۳۴۵۶۷۸۹۰</small>
+        </div>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="cart-card">
+        <h5 class="mb-4">روش پرداخت</h5>
+
+        <!-- PayPing -->
+        <div class="payment-method selected mb-3"
+             onclick="selectPayment(this)">
+          <div class="d-flex align-items-center justify-content-between">
+            <div class="d-flex align-items-center">
+              <img src="https://payping.ir/assets/images/logo.svg"
+                   alt="PayPing"
+                   class="bank-logo me-3" />
+              <div>
+                <div>درگاه پی‌پینگ</div>
+                <small class="text-secondary">پرداخت امن از طریق درگاه پی‌پینگ</small>
+              </div>
+            </div>
+            <i class="bi bi-check-circle text-success"></i>
+          </div>
+        </div>
+
+        <!-- Shaparak Info -->
+        <div class="d-flex align-items-center text-secondary small mb-4">
+          <img src="/api/placeholder/80/40?text=Shaparak"
+               alt="Shaparak"
+               class="shaparak-logo" />
+          <div>
+            پرداخت از طریق درگاه امن شاپرک با قابلیت پرداخت توسط تمامی کارت‌های
+            بانکی عضو شتاب
+          </div>
+        </div>
+
+        <div class="alert alert-warning">
+          <i class="bi bi-exclamation-triangle-fill me-2"></i>
+          توجه: پس از اتمام فرایند پرداخت، حتماً دکمه بازگشت به سایت را بزنید.
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="dashboard-card">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <h6 class="mb-1">مبلغ قابل پرداخت</h6>
+            <div class="text-secondary">با احتساب مالیات و هزینه ارسال</div>
+          </div>
+          <div class="text-start">
+            <div class="fs-5 mb-1">۵,۲۹۲,۲۰۰ تومان</div>
+            <small class="text-secondary">شامل ۹٪ مالیات</small>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button class="btn btn-primary"
+                  onclick="proceedToPayment()">
+            پرداخت و ثبت نهایی سفارش
+            <i class="bi bi-arrow-left me-2"></i>
+          </button>
+          <button class="btn btn-outline-light"
+                  onclick="window.location.href='cart/address.html'">
+            بازگشت به مرحله قبل
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- Scripts Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#header').load('components/header.html');
+      $('#footer').load('components/footer.html');
+
+      // Initialize from localStorage
+      const cart = localStorage.getItem('noja_cart');
+      if (!cart) {
+        window.location.href = 'index.html';
+      }
+    });
+
+    function selectPayment(element) {
+      document.querySelectorAll('.payment-method').forEach((method) => {
+        method.classList.remove('selected');
+      });
+      element.classList.add('selected');
+    }
+
+    function proceedToPayment() {
+      // Simulated PayPing payment flow
+      const orderData = {
+        order_id: 'NOJ-12345',
+        amount: 52922000, // In Rials
+        callback: window.location.origin + '/payment/callback',
+      };
+
+      // In real implementation, would make API call to PayPing
+      showPaymentModal();
+    }
+
+    function showPaymentModal() {
+      const modal = document.createElement('div');
+      modal.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1050;
+      `;
+
+      const content = document.createElement('div');
+      content.className = 'cart-card';
+      content.style.margin = '1rem';
+      content.style.maxWidth = '400px';
+      content.innerHTML = `
+        <div class="text-center">
+          <i class="bi bi-arrow-repeat fs-1 mb-3 d-block"></i>
+          <h5 class="mb-3">در حال انتقال به درگاه پرداخت</h5>
+          <p class="text-secondary mb-4">لطفاً صبر کنید...</p>
+          <div class="progress" style="height: 4px;">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" style="width: 100%"></div>
+          </div>
+        </div>
+      `;
+
+      modal.appendChild(content);
+      document.body.appendChild(modal);
+
+      // Simulate redirect to payment gateway
+      setTimeout(() => {
+        window.location.href = 'cart/success.html';
+      }, 2000);
+    }
+  </script>
+</body>
+
+</html>

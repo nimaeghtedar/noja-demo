@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="fa"
+      dir="rtl">
+
+<head>
+  <base href="/">
+  <meta charset="UTF-8" />
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>ثبت‌نام | NOJA - نوژا</title>
+
+  <!-- Bootstrap RTL & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css"
+        rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+  <link href="/assets/styles/auth.css"
+        rel="stylesheet">
+
+  <style>
+    /* Register-specific styles */
+    .progress-steps {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .progress-steps::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #eee;
+      z-index: 1;
+    }
+
+    .step {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: white;
+      border: 2px solid #eee;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+      transition: all 0.3s ease;
+    }
+
+    .step.active {
+      border-color: var(--primary-color);
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .step.completed {
+      border-color: #28a745;
+      background: #28a745;
+      color: white;
+    }
+
+    .password-strength {
+      height: 4px;
+      transition: all 0.3s ease;
+      margin-top: 0.5rem;
+    }
+
+    .password-strength div {
+      height: 100%;
+      width: 0;
+      transition: all 0.3s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="auth-container floating-shapes">
+    <div class="container py-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="auth-card">
+            <div class="row g-0">
+              <!-- Sidebar -->
+              <div class="col-lg-5 d-none d-lg-block auth-sidebar">
+                <div class="text-center position-relative">
+                  <img src="/assets/images/logos/noja-logo.png"
+                       alt="NOJA"
+                       class="mb-4 floating"
+                       style="max-width: 150px;">
+                  <h1 class="display-6 mb-4">به خانواده نوژا خوش آمدید</h1>
+                  <p class="lead mb-4">با ثبت‌نام در نوژا، دسترسی به خرید آسان از فروشگاه‌های جهانی را تجربه کنید</p>
+                  <img src="/assets/images/register-illustration.svg"
+                       alt=""
+                       class="img-fluid mt-4 floating"
+                       style="max-width: 300px;">
+                </div>
+              </div>
+
+              <!-- Form Section -->
+              <div class="col-lg-7">
+                <div class="p-5">
+                  <div class="progress-steps mb-4">
+                    <div class="step active"
+                         id="step1">1</div>
+                    <div class="step"
+                         id="step2">2</div>
+                    <div class="step"
+                         id="step3">3</div>
+                  </div>
+
+                  <!-- Step 1: Basic Info -->
+                  <div id="basicInfoForm">
+                    <h2 class="text-center mb-4">ثبت‌نام در نوژا</h2>
+
+                    <button class="btn btn-google w-100 mb-4">
+                      <i class="bi bi-google me-2"></i>
+                      ثبت‌نام با گوگل
+                    </button>
+
+                    <div class="social-divider mb-4">
+                      <span>یا</span>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">نام و نام خانوادگی</label>
+                      <input type="text"
+                             class="form-control"
+                             id="fullname"
+                             required>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">شماره موبایل</label>
+                      <div class="input-group">
+                        <span class="input-group-text">+98</span>
+                        <input type="tel"
+                               class="form-control"
+                               id="phone"
+                               placeholder="9xxxxxxxxx"
+                               required>
+                      </div>
+                    </div>
+
+                    <div class="mb-3">
+                      <label class="form-label">رمز عبور</label>
+                      <div class="input-group">
+                        <input type="password"
+                               class="form-control"
+                               id="password"
+                               required>
+                        <button class="btn btn-outline-secondary"
+                                type="button"
+                                onclick="togglePassword(this)">
+                          <i class="bi bi-eye"></i>
+                        </button>
+                      </div>
+                      <div class="password-strength">
+                        <div id="strengthBar"></div>
+                      </div>
+                      <small class="text-muted"
+                             id="passwordHint">حداقل 8 کاراکتر شامل حروف و اعداد</small>
+                    </div>
+
+                    <button class="btn btn-primary w-100"
+                            onclick="goToStep2()">ادامه</button>
+                  </div>
+
+                  <!-- Step 2: OTP Verification -->
+                  <div id="otpForm"
+                       class="d-none">
+                    <h2 class="text-center mb-4">تایید شماره موبایل</h2>
+                    <p class="text-center mb-4">
+                      کد تایید به شماره <span class="text-primary"
+                            id="userPhone"></span> ارسال شد
+                    </p>
+
+                    <div class="d-flex justify-content-center gap-2 mb-4">
+                      <input type="text"
+                             class="otp-input"
+                             maxlength="1"
+                             data-next="otp2">
+                      <input type="text"
+                             class="otp-input"
+                             maxlength="1"
+                             data-next="otp3"
+                             data-prev="otp1">
+                      <input type="text"
+                             class="otp-input"
+                             maxlength="1"
+                             data-next="otp4"
+                             data-prev="otp2">
+                      <input type="text"
+                             class="otp-input"
+                             maxlength="1"
+                             data-prev="otp3">
+                    </div>
+
+                    <div class="text-center mb-4">
+                      <span id="timer"
+                            class="text-secondary">02:00</span>
+                      <button id="resendBtn"
+                              class="btn btn-link d-none">ارسال مجدد کد</button>
+                    </div>
+
+                    <button class="btn btn-primary w-100"
+                            onclick="goToStep3()">تایید و ادامه</button>
+                  </div>
+
+                  <!-- Step 3: Additional Info -->
+                  <div id="additionalInfoForm"
+                       class="d-none">
+                    <h2 class="text-center mb-4">تکمیل اطلاعات</h2>
+
+                    <div class="mb-3">
+                      <label class="form-label">ایمیل</label>
+                      <input type="email"
+                             class="form-control"
+                             id="email"
+                             required>
+                    </div>
+
+                    <div class="mb-4">
+                      <label class="form-label">آدرس</label>
+                      <textarea class="form-control"
+                                id="address"
+                                rows="3"
+                                required></textarea>
+                    </div>
+
+                    <div class="mb-4">
+                      <div class="form-check">
+                        <input type="checkbox"
+                               class="form-check-input"
+                               id="terms"
+                               required>
+                        <label class="form-check-label"
+                               for="terms">
+                          <a href="#"
+                             class="text-primary">قوانین و مقررات</a> را مطالعه کرده و می‌پذیرم
+                        </label>
+                      </div>
+                    </div>
+
+                    <button class="btn btn-primary w-100"
+                            onclick="completeRegistration()">تکمیل ثبت‌نام</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Password toggle
+    function togglePassword(button) {
+      const input = button.previousElementSibling;
+      const icon = button.querySelector('i');
+      input.type = input.type === 'password' ? 'text' : 'password';
+      icon.classList.toggle('bi-eye');
+      icon.classList.toggle('bi-eye-slash');
+    }
+
+    // Password strength checker
+    document.getElementById('password').addEventListener('input', function (e) {
+      const password = e.target.value;
+      const strengthBar = document.getElementById('strengthBar');
+      let strength = 0;
+
+      if (password.length >= 8) strength += 25;
+      if (password.match(/[A-Z]/)) strength += 25;
+      if (password.match(/[0-9]/)) strength += 25;
+      if (password.match(/[^A-Za-z0-9]/)) strength += 25;
+
+      strengthBar.style.width = strength + '%';
+      strengthBar.style.backgroundColor =
+        strength <= 25 ? '#dc3545' :
+          strength <= 50 ? '#ffc107' :
+            strength <= 75 ? '#17a2b8' : '#28a745';
+    });
+
+    // OTP handling
+    document.querySelectorAll('.otp-input').forEach(input => {
+      input.addEventListener('input', function () {
+        if (this.value) {
+          const next = this.dataset.next;
+          if (next) document.querySelector(`[data-prev="${next}"]`).focus();
+        }
+      });
+
+      input.addEventListener('keydown', function (e) {
+        if (e.key === 'Backspace' && !this.value) {
+          const prev = this.dataset.prev;
+          if (prev) document.querySelector(`[data-next="${prev}"]`).focus();
+        }
+      });
+    });
+
+    // Timer functionality
+    function startTimer() {
+      let timeLeft = 120;
+      const timerEl = document.getElementById('timer');
+      const resendBtn = document.getElementById('resendBtn');
+
+      const timer = setInterval(() => {
+        const minutes = Math.floor(timeLeft / 60);
+        const seconds = timeLeft % 60;
+
+        timerEl.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+
+        if (--timeLeft < 0) {
+          clearInterval(timer);
+          timerEl.classList.add('d-none');
+          resendBtn.classList.remove('d-none');
+        }
+      }, 1000);
+    }
+
+    // Step navigation
+    function goToStep2() {
+      document.getElementById('basicInfoForm').classList.add('d-none');
+      document.getElementById('otpForm').classList.remove('d-none');
+      document.getElementById('step1').classList.add('completed');
+      document.getElementById('step2').classList.add('active');
+      document.getElementById('userPhone').textContent = document.getElementById('phone').value;
+      startTimer();
+    }
+
+    function goToStep3() {
+      document.getElementById('otpForm').classList.add('d-none');
+      document.getElementById('additionalInfoForm').classList.remove('d-none');
+      document.getElementById('step2').classList.add('completed');
+      document.getElementById('step3').classList.add('active');
+    }
+
+    function completeRegistration() {
+      // Demo: Show success message and redirect
+      alert('ثبت‌نام با موفقیت انجام شد!');
+      window.location.href = '/pages/auth/login.html';
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+:root {
+  --primary-color: #2b3441;
+  --accent-color: #566474;
+  --bg-gradient: linear-gradient(135deg, #f8f5f0 0%, #ffffff 100%);
+}
+
+.auth-container {
+  min-height: 100vh;
+  background: var(--bg-gradient);
+  position: relative;
+  overflow: hidden;
+}
+
+.floating-shapes::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(43, 52, 65, 0.05),
+    rgba(86, 100, 116, 0.05)
+  );
+  top: -250px;
+  right: -250px;
+  animation: float 15s infinite ease-in-out;
+}
+
+.floating-shapes::after {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(
+    45deg,
+    rgba(86, 100, 116, 0.05),
+    rgba(43, 52, 65, 0.05)
+  );
+  bottom: -150px;
+  left: -150px;
+  animation: float 20s infinite ease-in-out reverse;
+}
+
+.auth-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.auth-sidebar {
+  background: var(--primary-color);
+  padding: 3rem;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="white" opacity="0.1" width="100" height="100"/></svg>')
+    repeat;
+  animation: slide 20s linear infinite;
+}
+
+.btn-google {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.btn-google:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #eee;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(43, 52, 65, 0.1);
+}
+
+.btn-primary {
+  background: var(--primary-color);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.otp-input {
+  width: 50px;
+  height: 50px;
+  font-size: 1.5rem;
+  text-align: center;
+  border: 2px solid #eee;
+  border-radius: 12px;
+  margin: 0 4px;
+  transition: all 0.3s ease;
+}
+
+.otp-input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(43, 52, 65, 0.1);
+}
+
+.social-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #666;
+}
+
+.social-divider::before,
+.social-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #ddd;
+}
+
+.social-divider span {
+  padding: 0 10px;
+}
+
+.floating {
+  animation: floating 3s infinite ease-in-out;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(30px, 30px) rotate(5deg);
+  }
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Lalezar', cursive;
+}
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+}
