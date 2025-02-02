@@ -30,20 +30,30 @@ function initializeHeader() {
   // Initialize cart
   updateCartBadge();
 
-  // Theme toggle
-  const themeToggle = document.getElementById('theme-toggle');
-  if (themeToggle) {
-    const currentTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', currentTheme);
-    updateThemeIcon(currentTheme);
+  // Theme toggle - Add delay to ensure DOM is ready
+  setTimeout(() => {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', currentTheme);
+      updateThemeIcon(currentTheme);
 
-    themeToggle.addEventListener('click', () => {
-      const theme = document.body.getAttribute('data-theme');
-      const newTheme = theme === 'light' ? 'dark' : 'light';
-      document.body.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      updateThemeIcon(newTheme);
-    });
+      themeToggle.addEventListener('click', () => {
+        const theme = document.body.getAttribute('data-theme');
+        const newTheme = theme === 'light' ? 'dark' : 'light';
+        document.body.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+      });
+    }
+  }, 100);
+}
+
+function updateThemeIcon(theme) {
+  const icon = document.getElementById('theme-icon');
+  if (icon) {
+    icon.className =
+      theme === 'light' ? 'bi bi-moon-stars fs-5' : 'bi bi-sun fs-5';
   }
 }
 
