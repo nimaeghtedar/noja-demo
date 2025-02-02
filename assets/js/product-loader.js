@@ -5,7 +5,14 @@ const itemsPerPage = 12;
 async function loadProducts() {
   showLoading(true);
   try {
-    const response = await fetch('./assets/data/products.csv');
+    // Get the base URL for GitHub Pages compatibility
+    const baseUrl =
+      window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1'
+        ? '.'
+        : '/noja-demo'; // Replace 'noja-demo' with your repository name
+
+    const response = await fetch(`${baseUrl}/assets/data/products.csv`);
     const csvText = await response.text();
 
     Papa.parse(csvText, {
