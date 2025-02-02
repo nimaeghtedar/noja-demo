@@ -5,8 +5,7 @@ const itemsPerPage = 12;
 async function loadProducts() {
   showLoading(true);
   try {
-    const baseUrl = '/noja-demo';
-    const response = await fetch(`${baseUrl}/assets/data/products.csv`);
+    const response = await fetch('/assets/data/products.csv');
     const csvText = await response.text();
 
     Papa.parse(csvText, {
