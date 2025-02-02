@@ -1,50 +1,84 @@
-// Wait for document load
 document.addEventListener('DOMContentLoaded', function () {
+  // Get base path
+  const basePath = window.location.pathname.startsWith('/pages/') ? '/' : './';
+
   // Load components
-  loadComponents().then(() => {
-    // Initialize theme after components are loaded
-    initializeTheme();
-  });
+  const header = document.getElementById('header');
+  const footer = document.getElementById('footer');
+
+  if (header) {
+    fetch(basePath + 'components/header.html')
+      .then((response) => response.text())
+      .then((html) => {
+        header.innerHTML = html;
+        initializeHeader();
+      })
+      .catch((error) => console.error('Error loading header:', error));
+  }
+
+  if (footer) {
+    fetch(basePath + 'components/footer.html')
+      .then((response) => response.text())
+      .then((html) => {
+        footer.innerHTML = html;
+      })
+      .catch((error) => console.error('Error loading footer:', error));
+  }
 });
 
-// Load header and footer
-function loadComponents() {
-  return Promise.all([
-    fetch('./components/header.html').then((response) => response.text()),
-    fetch('./components/footer.html').then((response) => response.text()),
-  ]).then(([header, footer]) => {
-    document.getElementById('header').innerHTML = header;
-    document.getElementById('footer').innerHTML = footer;
-  });
-}
+function initializeHeader() {
+  // Initialize cart
+  updateCartBadge();
 
-// Initialize theme
-function initializeTheme() {
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  document.body.setAttribute('data-theme', savedTheme);
-  updateThemeIcon(savedTheme);
-
-  // Add event listener to theme toggle after component is loaded
+  // Theme toggle
   const themeToggle = document.getElementById('theme-toggle');
   if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.body.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+      const theme = document.body.getAttribute('data-theme');
+      const newTheme = theme === 'light' ? 'dark' : 'light';
+      document.body.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateThemeIcon(newTheme);
+    });
   }
 }
 
-// Toggle theme function
-function toggleTheme() {
-  const currentTheme = document.body.getAttribute('data-theme');
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-
-  document.body.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateThemeIcon(newTheme);
-}
-
-// Update theme icon
-function updateThemeIcon(theme) {
-  const icon = document.getElementById('theme-icon');
-  if (icon) {
-    icon.className = theme === 'light' ? 'bi bi-moon' : 'bi bi-sun';
+function updateCartBadge() {
+  const cart = getCart();
+  const itemCount = Object.keys(cart.items).length;
+  const badge = document.querySelector('.cart-badge');
+  if (badge) {
+    badge.textContent = itemCount;
   }
 }
+
+function getCart() {
+  return JSON.parse(localStorage.getItem('noja_cart') || '{"items":{}}');
+}
+
+function showNotification(message) {
+  const notification = document.createElement('div');
+  notification.className = 'position-fixed bottom-0 end-0 p-3';
+  notification.style.zIndex = '9999';
+
+  notification.innerHTML = `
+      <div class="dashboard-card">
+          <div class="d-flex align-items-center">
+              <i class="bi bi-check-circle text-success me-2"></i>
+              ${message}
+          </div>
+      </div>
+  `;
+
+  document.body.appendChild(notification);
+  setTimeout(() => notification.remove(), 3000);
+}
+
+// Make functions available globally
+window.updateCartBadge = updateCartBadge;
+window.getCart = getCart;
+window.showNotification = showNotification;

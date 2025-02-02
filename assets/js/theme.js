@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateThemeIcon(theme) {
   const icon = document.getElementById('theme-icon');
   if (icon) {
-    icon.className = theme === 'light' ? 'bi bi-moon' : 'bi bi-sun';
+    icon.className =
+      theme === 'light' ? 'bi bi-moon-stars fs-5' : 'bi bi-sun fs-5';
   }
 }

@@ -27,68 +27,79 @@
 
       <main class="flex-grow-1">
             <!-- Hero Section -->
-            <section class="bg-pattern py-5">
+            <section class="hero-gradient text-white py-5">
                   <div class="container text-center">
-                        <h1 class="display-4 fw-bold mb-4"
-                            data-aos="fade-up">خرید با لینک</h1>
-                        <p class="lead mb-0 text-secondary"
+                        <h1 class="display-4 fw-bold mb-3"
+                            data-aos="fade-up">خرید نامحدود جهانی</h1>
+                        <div class="accent-bar mx-auto mb-4"></div>
+                        <p class="lead mb-0"
                            data-aos="fade-up"
-                           data-aos-delay="200">به سادگی لینک محصول مورد نظر خود را ارسال کنید</p>
+                           data-aos-delay="200">از هر فروشگاه معتبر جهانی با پرداخت ریالی خرید کنید</p>
                   </div>
             </section>
 
-            <!-- Purchase Link Form Section -->
+            <!-- Brand-Specific Purchase Links -->
+            <section class="py-5 bg-pattern">
+                  <div class="container">
+                        <h2 class="text-center mb-5"
+                            data-aos="fade-up">فروشگاه‌های اختصاصی</h2>
+                        <div class="row g-4">
+                              <!-- Add cards for each brand -->
+                              <div class="col-md-4"
+                                   data-aos="fade-up">
+                                    <div class="brand-card hover-lift">
+                                          <img src="assets/images/logos/ikea-logo.png"
+                                               alt="Ikea"
+                                               class="brand-logo mb-3">
+                                          <h3>Ikea</h3>
+                                          <p class="text-secondary">خرید مستقیم از ایکیا امارات</p>
+                                          <a href="/pages/brands/ikea.html"
+                                             class="btn btn-outline-primary w-100">مشاهده فروشگاه</a>
+                                    </div>
+                              </div>
+                              <!-- Add more brand cards... -->
+                        </div>
+                  </div>
+            </section>
+
+            <!-- Enhanced Purchase Form Section -->
             <section class="py-5">
                   <div class="container">
                         <div class="row justify-content-center">
                               <div class="col-lg-8">
-                                    <!-- Instructions Card -->
-                                    <div class="card mb-4"
+                                    <!-- Status Timeline -->
+                                    <div class="purchase-timeline card mb-4"
                                          data-aos="fade-up">
                                           <div class="card-body">
-                                                <h3 class="card-title mb-4">راهنمای خرید با لینک</h3>
-                                                <div class="steps-guide">
-                                                      <div class="step d-flex align-items-start mb-4">
-                                                            <div class="step-icon me-3">
-                                                                  <i class="bi bi-1-circle-fill text-primary fs-4"></i>
+                                                <div
+                                                     class="d-flex justify-content-between position-relative timeline-steps">
+                                                      <div class="timeline-step active">
+                                                            <div class="timeline-icon">
+                                                                  <i class="bi bi-link-45deg"></i>
                                                             </div>
-                                                            <div class="step-content">
-                                                                  <h5>انتخاب محصول</h5>
-                                                                  <p class="text-secondary mb-0">لینک محصول مورد نظر خود
-                                                                        را از فروشگاه‌های معتبر جهانی کپی کنید.</p>
-                                                            </div>
+                                                            <div class="timeline-text">ارسال لینک</div>
                                                       </div>
-                                                      <div class="step d-flex align-items-start mb-4">
-                                                            <div class="step-icon me-3">
-                                                                  <i class="bi bi-2-circle-fill text-primary fs-4"></i>
+                                                      <div class="timeline-step">
+                                                            <div class="timeline-icon">
+                                                                  <i class="bi bi-check2-circle"></i>
                                                             </div>
-                                                            <div class="step-content">
-                                                                  <h5>ارسال لینک</h5>
-                                                                  <p class="text-secondary mb-0">لینک را در فرم زیر وارد
-                                                                        کرده و مشخصات محصول را تکمیل کنید.</p>
-                                                            </div>
+                                                            <div class="timeline-text">تایید و قیمت‌گذاری</div>
                                                       </div>
-                                                      <div class="step d-flex align-items-start">
-                                                            <div class="step-icon me-3">
-                                                                  <i class="bi bi-3-circle-fill text-primary fs-4"></i>
+                                                      <div class="timeline-step">
+                                                            <div class="timeline-icon">
+                                                                  <i class="bi bi-credit-card"></i>
                                                             </div>
-                                                            <div class="step-content">
-                                                                  <h5>تایید و پرداخت</h5>
-                                                                  <p class="text-secondary mb-0">پس از بررسی لینک، قیمت
-                                                                        نهایی اعلام شده و می‌توانید پرداخت را انجام
-                                                                        دهید.</p>
-                                                            </div>
+                                                            <div class="timeline-text">پرداخت</div>
                                                       </div>
                                                 </div>
                                           </div>
                                     </div>
 
-                                    <!-- Purchase Form -->
-                                    <div class="card"
-                                         data-aos="fade-up"
-                                         data-aos-delay="200">
+                                    <!-- Enhanced Purchase Form -->
+                                    <div class="card shadow-sm"
+                                         data-aos="fade-up">
                                           <div class="card-body">
-                                                <h3 class="card-title mb-4">فرم ثبت سفارش</h3>
+                                                <h3 class="card-title mb-4">ثبت سفارش</h3>
                                                 <form id="purchaseForm">
                                                       <div class="mb-4">
                                                             <label class="form-label">لینک محصول</label>
@@ -98,36 +109,45 @@
                                                                          placeholder="لینک محصول را وارد کنید"
                                                                          required>
                                                                   <button class="btn btn-outline-primary"
-                                                                          type="button">بررسی لینک</button>
+                                                                          type="button">
+                                                                        <i class="bi bi-search me-2"></i>بررسی لینک
+                                                                  </button>
                                                             </div>
+                                                            <small class="form-text text-secondary">لینک را از
+                                                                  فروشگاه‌های معتبر جهانی کپی کنید</small>
                                                       </div>
 
-                                                      <div class="row mb-4">
-                                                            <div class="col-md-6">
-                                                                  <label class="form-label">تعداد</label>
-                                                                  <input type="number"
-                                                                         class="form-control"
-                                                                         min="1"
-                                                                         value="1"
-                                                                         required>
-                                                            </div>
-                                                            <div class="col-md-6">
-                                                                  <label class="form-label">سایز / رنگ (اختیاری)</label>
-                                                                  <input type="text"
-                                                                         class="form-control"
-                                                                         placeholder="در صورت نیاز مشخص کنید">
+                                                      <!-- Product Options -->
+                                                      <div class="product-options mb-4"
+                                                           style="display: none;">
+                                                            <div class="row g-3">
+                                                                  <div class="col-md-6">
+                                                                        <label class="form-label">تعداد</label>
+                                                                        <input type="number"
+                                                                               class="form-control"
+                                                                               min="1"
+                                                                               value="1">
+                                                                  </div>
+                                                                  <div class="col-md-6">
+                                                                        <label class="form-label">سایز / رنگ</label>
+                                                                        <input type="text"
+                                                                               class="form-control"
+                                                                               placeholder="در صورت نیاز مشخص کنید">
+                                                                  </div>
                                                             </div>
                                                       </div>
 
                                                       <div class="mb-4">
-                                                            <label class="form-label">توضیحات تکمیلی (اختیاری)</label>
+                                                            <label class="form-label">توضیحات تکمیلی</label>
                                                             <textarea class="form-control"
                                                                       rows="3"
-                                                                      placeholder="هر توضیح اضافی که لازم است را اینجا بنویسید"></textarea>
+                                                                      placeholder="هر گونه توضیح اضافی که لازم است را اینجا بنویسید"></textarea>
                                                       </div>
 
                                                       <button type="submit"
-                                                              class="btn btn-primary w-100">ثبت سفارش</button>
+                                                              class="btn btn-gradient w-100">
+                                                            <i class="bi bi-send me-2"></i>ثبت سفارش
+                                                      </button>
                                                 </form>
                                           </div>
                                     </div>
