@@ -139,7 +139,44 @@
           <!-- Products Grid -->
           <div id="products-grid"
                class="row g-4">
-            <!-- Products will be loaded here -->
+            <!-- Product Card Template -->
+            <div class="col-md-6 col-lg-4">
+              <div class="product-card h-100">
+                <div class="product-image">
+                  <span class="badge bg-success position-absolute top-0 start-0 m-3">موجود</span>
+                  <img src="/api/placeholder/400/300"
+                       class="card-img-top"
+                       alt="Product">
+                  <div class="product-overlay">
+                    <button class="btn btn-light btn-sm">
+                      <i class="bi bi-heart"></i>
+                    </button>
+                    <button class="btn btn-primary btn-sm">افزودن به سبد</button>
+                  </div>
+                </div>
+                <div class="card-body p-4">
+                  <div class="text-muted small mb-1">الکترونیک</div>
+                  <h5 class="card-title mb-2">مک‌بوک پرو ۱۴ اینچی اپل</h5>
+                  <div class="product-meta d-flex justify-content-between align-items-center mb-2">
+                    <div class="rating">
+                      <i class="bi bi-star-fill text-warning"></i>
+                      <span class="ms-1">4.8</span>
+                      <span class="text-muted">(245)</span>
+                    </div>
+                    <div class="store-badge">
+                      <img src="./assets/images/stores/amazon.png"
+                           alt="Amazon"
+                           width="24"
+                           height="24">
+                    </div>
+                  </div>
+                  <div class="price-section">
+                    <span class="price">52,000,000</span>
+                    <span class="currency">تومان</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Loading State -->
