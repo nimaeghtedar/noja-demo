@@ -3,7 +3,7 @@
       dir="rtl">
 
 <head>
-  <base href="/">
+  <base href="../">
   <meta charset="UTF-8" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -149,8 +149,8 @@
   <script src="assets/js/main.js"></script>
   <script>
     $(document).ready(function () {
-      $('#header').load('components/header.html');
-      $('#footer').load('components/footer.html');
+      $('#header').load('../components/header.html');
+      $('#footer').load('../components/footer.html');
 
       // Initialize from localStorage
       const cart = localStorage.getItem('noja_cart');

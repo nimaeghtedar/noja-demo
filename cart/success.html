@@ -3,7 +3,7 @@
       dir="rtl">
 
 <head>
-  <base href="/">
+  <base href="../">
   <meta charset="UTF-8" />
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
@@ -54,7 +54,7 @@
               <span id="amount">۵,۲۹۲,۲۰۰ تومان</span>
             </div>
             <div class="col-6">
-              <small class="text-secondary d-block">تاریخ پرداخت</small>
+              <small class="text-secondary د-block">تاریخ پرداخت</small>
               <span id="date">۱۵ دی ۱۴۰۲</span>
             </div>
           </div>
@@ -89,8 +89,8 @@
   <script src="assets/js/main.js"></script>
   <script>
     $(document).ready(function () {
-      $('#header').load('components/header.html');
-      $('#footer').load('components/footer.html');
+      $('#header').load('../components/header.html');
+      $('#footer').load('../components/footer.html');
 
       // Parse URL parameters
       const params = new URLSearchParams(window.location.search);
